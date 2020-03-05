@@ -11,16 +11,28 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="instaSample2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="595" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="spx-Kw-7pi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="595" id="Qfx-P5-Gjh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="595"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qfx-P5-Gjh" id="cwc-V6-Ca0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="595"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
                     <navigationItem key="navigationItem" id="qNb-3O-t3A"/>
+                    <connections>
+                        <outlet property="timelineTableView" destination="spx-Kw-7pi" id="rD7-hk-6gy"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3460" y="-1114.2857142857142"/>
         </scene>
@@ -30,6 +42,7 @@
                 <tabBarController storyboardIdentifier="RootTabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y9q-Jn-Otk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w00-Gu-G6d">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -47,7 +60,6 @@
         <!--View Controller-->
         <scene sceneID="NQ9-ds-9CQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pp-oj-UcP" sceneMemberID="firstResponder"/>
                 <viewController id="OWO-Vm-rv8" customClass="ViewController" customModule="instaSample2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pod-9u-9c4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -57,13 +69,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="cBB-97-ImL"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pp-oj-UcP" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3460" y="-440.39408866995075"/>
         </scene>
         <!--User Page View Controller-->
         <scene sceneID="XFh-f4-bVI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iMC-kx-8dU" sceneMemberID="firstResponder"/>
                 <viewController id="1he-ty-qnq" customClass="UserPageViewController" customModule="instaSample2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QsH-Fm-oga">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -173,6 +185,7 @@
                         <outlet property="userIntroductionTextView" destination="GrJ-gL-tL5" id="jpO-a3-D3G"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMC-kx-8dU" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3460" y="908.86699507389164"/>
         </scene>
@@ -277,19 +290,64 @@
             </objects>
             <point key="canvasLocation" x="5006" y="909"/>
         </scene>
-        <!--View Controller-->
+        <!--新規投稿-->
         <scene sceneID="8y1-LM-r0U">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e6l-0d-CBT" sceneMemberID="firstResponder"/>
-                <viewController id="f0J-mL-QdT" customClass="ViewController" customModule="instaSample2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="f0J-mL-QdT" customClass="PostViewController" customModule="instaSample2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kl8-sd-Qe0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xok-UQ-Mkl">
+                                <rect key="frame" x="16" y="350" width="343" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92361560880829019" green="0.92361560880829019" blue="0.92361560880829019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ここにキャプションを書く"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKq-60-Jkb">
+                                <rect key="frame" x="16" y="305" width="343" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="画像を選択"/>
+                                <connections>
+                                    <action selector="selectImage:" destination="f0J-mL-QdT" eventType="touchUpInside" id="kQe-9D-jBq"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w19-us-7H8">
+                                <rect key="frame" x="87" y="100" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="pd9-qV-TsB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ov7-hk-kJX"/>
+                    <navigationItem key="navigationItem" title="新規投稿" id="ov7-hk-kJX">
+                        <barButtonItem key="leftBarButtonItem" title="キャンセル" id="dkS-A3-hdO">
+                            <connections>
+                                <action selector="cancel:" destination="f0J-mL-QdT" id="CpZ-q3-Kju"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="シェア" id="xEb-as-MDb">
+                            <connections>
+                                <action selector="sharePhoto:" destination="f0J-mL-QdT" id="bbC-QN-cwY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="postButton" destination="xEb-as-MDb" id="Opa-xH-0Qr"/>
+                        <outlet property="postImageView" destination="w19-us-7H8" id="Fc8-FU-Fv3"/>
+                        <outlet property="postTextView" destination="xok-UQ-Mkl" id="Dv8-zD-kaG"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6l-0d-CBT" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3460" y="247.53694581280789"/>
         </scene>

@@ -17,6 +17,9 @@
 		436EEFCC2410B9FE008F7763 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFCB2410B9FE008F7763 /* SignInViewController.swift */; };
 		436EEFCE2410C4D4008F7763 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFCD2410C4D4008F7763 /* UserPageViewController.swift */; };
 		436EEFD02410CDAC008F7763 /* EditUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFCF2410CDAC008F7763 /* EditUserInfoViewController.swift */; };
+		436EEFD32410EA89008F7763 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFD12410EA89008F7763 /* TimelineTableViewCell.swift */; };
+		436EEFD42410EA89008F7763 /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436EEFD22410EA89008F7763 /* TimelineTableViewCell.xib */; };
+		436EEFD62410F9C9008F7763 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFD52410F9C9008F7763 /* PostViewController.swift */; };
 		878FEE1E0F1658729172A88C /* Pods_instaSample2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C8300F7CEF2FECA54EDE19 /* Pods_instaSample2.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		436EEFCB2410B9FE008F7763 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		436EEFCD2410C4D4008F7763 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		436EEFCF2410CDAC008F7763 /* EditUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoViewController.swift; sourceTree = "<group>"; };
+		436EEFD12410EA89008F7763 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
+		436EEFD22410EA89008F7763 /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
+		436EEFD52410F9C9008F7763 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		542F19A71ED1891288B4A6F8 /* Pods-instaSample2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaSample2.debug.xcconfig"; path = "Target Support Files/Pods-instaSample2/Pods-instaSample2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +86,8 @@
 		436EEFAF24108A93008F7763 /* instaSample2 */ = {
 			isa = PBXGroup;
 			children = (
+				436EEFBB24108A94008F7763 /* LaunchScreen.storyboard */,
+				436EEFBE24108A94008F7763 /* Info.plist */,
 				436EEFC424108B93008F7763 /* Model */,
 				436EEFC524108B9D008F7763 /* View */,
 				436EEFC624108BA4008F7763 /* Controller */,
@@ -88,8 +96,8 @@
 				436EEFC92410B713008F7763 /* SignUpViewController.swift */,
 				436EEFCD2410C4D4008F7763 /* UserPageViewController.swift */,
 				436EEFCF2410CDAC008F7763 /* EditUserInfoViewController.swift */,
-				436EEFBB24108A94008F7763 /* LaunchScreen.storyboard */,
-				436EEFBE24108A94008F7763 /* Info.plist */,
+				436EEFD12410EA89008F7763 /* TimelineTableViewCell.swift */,
+				436EEFD52410F9C9008F7763 /* PostViewController.swift */,
 			);
 			path = instaSample2;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 			children = (
 				436EEFB624108A93008F7763 /* Main.storyboard */,
 				436EEFC724108FE7008F7763 /* SignIn.storyboard */,
+				436EEFD22410EA89008F7763 /* TimelineTableViewCell.xib */,
 				436EEFB924108A94008F7763 /* Assets.xcassets */,
 			);
 			path = View;
@@ -189,6 +198,7 @@
 			files = (
 				436EEFC824108FE7008F7763 /* SignIn.storyboard in Resources */,
 				436EEFBD24108A94008F7763 /* LaunchScreen.storyboard in Resources */,
+				436EEFD42410EA89008F7763 /* TimelineTableViewCell.xib in Resources */,
 				436EEFBA24108A94008F7763 /* Assets.xcassets in Resources */,
 				436EEFB824108A93008F7763 /* Main.storyboard in Resources */,
 			);
@@ -243,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436EEFD62410F9C9008F7763 /* PostViewController.swift in Sources */,
+				436EEFD32410EA89008F7763 /* TimelineTableViewCell.swift in Sources */,
 				436EEFCC2410B9FE008F7763 /* SignInViewController.swift in Sources */,
 				436EEFCA2410B713008F7763 /* SignUpViewController.swift in Sources */,
 				436EEFD02410CDAC008F7763 /* EditUserInfoViewController.swift in Sources */,
