@@ -48,10 +48,10 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toComments" {
-//            let commentViewController = segue.destination as! CommentViewController
-//            commentViewController.postId = selectedPost?.objectId
-//        }
+        if segue.identifier == "toComments" {
+            let commentViewController = segue.destination as! CommentViewController
+            commentViewController.postId = selectedPost?.objectId
+        }
     }
     
     
@@ -77,8 +77,6 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         cell.commentTextView.text = posts[indexPath.row].text
         
         //投稿写真
-        
-        
         let postedImageUrl = posts[indexPath.row].imageUrl  //****ここのurlはとれないです!!
         cell.photoImageView.kf.setImage(with: URL(string: postedImageUrl))
         
@@ -101,10 +99,24 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     func didTapLikeButton(tableViewCell: UITableViewCell, button: UIButton) {
         
+        guard let currentUser = NCMBUser.current() else {
+            
+            //ログアウト成功
+            let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main)
+            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootNavigationController")
+            UIApplication.shared.keyWindow?.rootViewController = rootViewController
+            //ログアウト状態の保持
+            let ud = UserDefaults.standard
+            ud.set(false, forKey: "isLogin")
+            ud.synchronize()
+            
+            return
+        }
+        
         if posts[tableViewCell.tag].isLiked == false || posts[tableViewCell.tag].isLiked == nil {
             let query = NCMBQuery(className: "Post")
             query?.getObjectInBackground(withId: posts[tableViewCell.tag].objectId, block: { (post, error) in
-                post?.addUniqueObject(NCMBUser.current().objectId, forKey: "likeUser")
+                post?.addUniqueObject(currentUser.objectId, forKey: "likeUser")
                 post?.saveEventually({ (error) in
                     if error != nil {
                         SVProgressHUD.showError(withStatus: error!.localizedDescription)
@@ -119,7 +131,7 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
                 if error != nil {
                     SVProgressHUD.showError(withStatus: error!.localizedDescription)
                 } else {
-                    post?.removeObjects(in: [NCMBUser.current().objectId], forKey: "likeUser")
+                    post?.removeObjects(in: [currentUser.objectId], forKey: "likeUser")
                     post?.saveEventually({ (error) in
                         if error != nil {
                             SVProgressHUD.showError(withStatus: error!.localizedDescription)
@@ -174,14 +186,29 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     func didTapCommentsButton(tableViewCell: UITableViewCell, button: UIButton) {
         // 選ばれた投稿を一時的に格納
-//        selectedPost = posts[tableViewCell.tag]
+        selectedPost = posts[tableViewCell.tag]
 
         // 遷移させる(このとき、prepareForSegue関数で値を渡す)
-//        self.performSegue(withIdentifier: "toComments", sender: nil)
+        self.performSegue(withIdentifier: "toComments", sender: nil)
     }
     
     
     func loadTimeline() {
+        
+        guard let currentUser = NCMBUser.current() else {
+            
+            //ログアウト成功
+            let storyboard = UIStoryboard(name: "SignIn", bundle: Bundle.main)
+            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootNavigationController")
+            UIApplication.shared.keyWindow?.rootViewController = rootViewController
+            //ログアウト状態の保持
+            let ud = UserDefaults.standard
+            ud.set(false, forKey: "isLogin")
+            ud.synchronize()
+            
+            return
+        }
+        
         let query = NCMBQuery(className: "Post")
 
         // 投稿したユーザーの情報も同時取得
@@ -220,7 +247,7 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
 
                         // likeの状況(自分が過去にLikeしているか？)によってデータを挿入
                         let likeUsers = postObject.object(forKey: "likeUser") as? [String]
-                        if likeUsers?.contains(NCMBUser.current().objectId) == true {
+                        if likeUsers?.contains(currentUser.objectId) == true {
                             post.isLiked = true
                         } else {
                             post.isLiked = false

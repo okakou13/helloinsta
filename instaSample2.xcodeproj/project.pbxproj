@@ -23,6 +23,7 @@
 		436EEFD8241118A2008F7763 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFD7241118A2008F7763 /* Post.swift */; };
 		436EEFDA241118B0008F7763 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFD9241118B0008F7763 /* User.swift */; };
 		436EEFDC24113137008F7763 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFDB24113137008F7763 /* Comment.swift */; };
+		436EEFDE24123219008F7763 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFDD24123219008F7763 /* CommentViewController.swift */; };
 		878FEE1E0F1658729172A88C /* Pods_instaSample2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C8300F7CEF2FECA54EDE19 /* Pods_instaSample2.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		436EEFD7241118A2008F7763 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		436EEFD9241118B0008F7763 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		436EEFDB24113137008F7763 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		436EEFDD24123219008F7763 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		542F19A71ED1891288B4A6F8 /* Pods-instaSample2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaSample2.debug.xcconfig"; path = "Target Support Files/Pods-instaSample2/Pods-instaSample2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				436EEFCF2410CDAC008F7763 /* EditUserInfoViewController.swift */,
 				436EEFD12410EA89008F7763 /* TimelineTableViewCell.swift */,
 				436EEFD52410F9C9008F7763 /* PostViewController.swift */,
+				436EEFDD24123219008F7763 /* CommentViewController.swift */,
 			);
 			path = instaSample2;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				436EEFCE2410C4D4008F7763 /* UserPageViewController.swift in Sources */,
 				436EEFD8241118A2008F7763 /* Post.swift in Sources */,
 				436EEFB524108A93008F7763 /* ViewController.swift in Sources */,
+				436EEFDE24123219008F7763 /* CommentViewController.swift in Sources */,
 				436EEFDA241118B0008F7763 /* User.swift in Sources */,
 				436EEFDC24113137008F7763 /* Comment.swift in Sources */,
 				436EEFB124108A93008F7763 /* AppDelegate.swift in Sources */,
