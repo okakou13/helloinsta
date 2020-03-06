@@ -8,7 +8,16 @@
 
 import UIKit
 
+protocol TimelineTableViewCellDelegate {
+    func didTapLikeButton(tableViewCell: UITableViewCell, button: UIButton)
+    func didTapMenuButton(tableViewCell: UITableViewCell, button: UIButton)
+    func didTapCommentsButton(tableViewCell: UITableViewCell, button: UIButton)
+}
+
 class TimelineTableViewCell: UITableViewCell {
+    
+    var delegate : TimelineTableViewCellDelegate?
+    
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -31,5 +40,24 @@ class TimelineTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func like(button: UIButton) {
+    
+        self.delegate?.didTapLikeButton(tableViewCell: self, button: button)
+    }
+    
+    @IBAction func openMenu(button: UIButton) {
+    
+       self.delegate?.didTapMenuButton(tableViewCell: self, button: button)
+    }
+    
+
+    @IBAction func showComments(button: UIButton) {
+    
+    self.delegate?.didTapCommentsButton(tableViewCell: self, button: button)
+    }
+    
+    
+    
     
 }
