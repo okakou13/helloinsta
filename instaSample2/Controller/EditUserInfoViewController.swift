@@ -150,7 +150,6 @@ class EditUserInfoViewController: UIViewController ,UITextFieldDelegate,UITextVi
         user?.saveInBackground(){ (error) in
             if error != nil {
                 print(error)
-                print("hello")
             } else {
                 self.dismiss(animated: true, completion: nil)
             }

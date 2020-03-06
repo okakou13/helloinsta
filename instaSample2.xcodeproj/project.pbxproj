@@ -24,6 +24,9 @@
 		436EEFDA241118B0008F7763 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFD9241118B0008F7763 /* User.swift */; };
 		436EEFDC24113137008F7763 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFDB24113137008F7763 /* Comment.swift */; };
 		436EEFDE24123219008F7763 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFDD24123219008F7763 /* CommentViewController.swift */; };
+		436EEFE324123CEB008F7763 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFE124123CEA008F7763 /* SearchTableViewCell.swift */; };
+		436EEFE424123CEB008F7763 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436EEFE224123CEB008F7763 /* SearchTableViewCell.xib */; };
+		436EEFE624123EF5008F7763 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EEFE524123EF5008F7763 /* SearchViewController.swift */; };
 		878FEE1E0F1658729172A88C /* Pods_instaSample2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C8300F7CEF2FECA54EDE19 /* Pods_instaSample2.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		436EEFD9241118B0008F7763 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		436EEFDB24113137008F7763 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		436EEFDD24123219008F7763 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		436EEFE124123CEA008F7763 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		436EEFE224123CEB008F7763 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		436EEFE524123EF5008F7763 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		542F19A71ED1891288B4A6F8 /* Pods-instaSample2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaSample2.debug.xcconfig"; path = "Target Support Files/Pods-instaSample2/Pods-instaSample2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,14 +105,6 @@
 				436EEFC424108B93008F7763 /* Model */,
 				436EEFC524108B9D008F7763 /* View */,
 				436EEFC624108BA4008F7763 /* Controller */,
-				436EEFB424108A93008F7763 /* ViewController.swift */,
-				436EEFCB2410B9FE008F7763 /* SignInViewController.swift */,
-				436EEFC92410B713008F7763 /* SignUpViewController.swift */,
-				436EEFCD2410C4D4008F7763 /* UserPageViewController.swift */,
-				436EEFCF2410CDAC008F7763 /* EditUserInfoViewController.swift */,
-				436EEFD12410EA89008F7763 /* TimelineTableViewCell.swift */,
-				436EEFD52410F9C9008F7763 /* PostViewController.swift */,
-				436EEFDD24123219008F7763 /* CommentViewController.swift */,
 			);
 			path = instaSample2;
 			sourceTree = "<group>";
@@ -114,7 +112,6 @@
 		436EEFC424108B93008F7763 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				436EEFB024108A93008F7763 /* AppDelegate.swift */,
 				436EEFD7241118A2008F7763 /* Post.swift */,
 				436EEFD9241118B0008F7763 /* User.swift */,
 				436EEFDB24113137008F7763 /* Comment.swift */,
@@ -128,6 +125,7 @@
 				436EEFB624108A93008F7763 /* Main.storyboard */,
 				436EEFC724108FE7008F7763 /* SignIn.storyboard */,
 				436EEFD22410EA89008F7763 /* TimelineTableViewCell.xib */,
+				436EEFE224123CEB008F7763 /* SearchTableViewCell.xib */,
 				436EEFB924108A94008F7763 /* Assets.xcassets */,
 			);
 			path = View;
@@ -136,6 +134,17 @@
 		436EEFC624108BA4008F7763 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				436EEFB024108A93008F7763 /* AppDelegate.swift */,
+				436EEFB424108A93008F7763 /* ViewController.swift */,
+				436EEFCB2410B9FE008F7763 /* SignInViewController.swift */,
+				436EEFC92410B713008F7763 /* SignUpViewController.swift */,
+				436EEFCD2410C4D4008F7763 /* UserPageViewController.swift */,
+				436EEFCF2410CDAC008F7763 /* EditUserInfoViewController.swift */,
+				436EEFD12410EA89008F7763 /* TimelineTableViewCell.swift */,
+				436EEFD52410F9C9008F7763 /* PostViewController.swift */,
+				436EEFDD24123219008F7763 /* CommentViewController.swift */,
+				436EEFE124123CEA008F7763 /* SearchTableViewCell.swift */,
+				436EEFE524123EF5008F7763 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +222,7 @@
 				436EEFD42410EA89008F7763 /* TimelineTableViewCell.xib in Resources */,
 				436EEFBA24108A94008F7763 /* Assets.xcassets in Resources */,
 				436EEFB824108A93008F7763 /* Main.storyboard in Resources */,
+				436EEFE424123CEB008F7763 /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +283,8 @@
 				436EEFCE2410C4D4008F7763 /* UserPageViewController.swift in Sources */,
 				436EEFD8241118A2008F7763 /* Post.swift in Sources */,
 				436EEFB524108A93008F7763 /* ViewController.swift in Sources */,
+				436EEFE624123EF5008F7763 /* SearchViewController.swift in Sources */,
+				436EEFE324123CEB008F7763 /* SearchTableViewCell.swift in Sources */,
 				436EEFDE24123219008F7763 /* CommentViewController.swift in Sources */,
 				436EEFDA241118B0008F7763 /* User.swift in Sources */,
 				436EEFDC24113137008F7763 /* Comment.swift in Sources */,
