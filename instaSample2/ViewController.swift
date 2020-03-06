@@ -32,7 +32,6 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         
         let nib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle.main)
         timelineTableView?.register(nib, forCellReuseIdentifier: "Cell")
-        
         timelineTableView?.tableFooterView = UIView()
         
         // 引っ張って更新
@@ -48,12 +47,12 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         // Dispose of any resources that can be recreated.
     }
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "toComments" {
 //            let commentViewController = segue.destination as! CommentViewController
 //            commentViewController.postId = selectedPost?.objectId
 //        }
-//    }
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,20 +71,23 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         let user = posts[indexPath.row].user
         cell.userNameLabel.text = user.displayName
         
-        //*****error***(user.objectId->userの画像に使ってる.)userimageUrl&&imageUrlとれてない*******error*******
-        let userImageUrl = "https://mb.api.cloud.nifty.com/2013-09-01/applications/YuYPRyKcrM8yolIK/publicFiles/" + user.objectId
-        
+        //ユーザー写真
+        let userImageUrl = "https://mbaas.api.nifcloud.com/2013-09-01/applications/YuYPRyKcrM8yolIK/publicFiles/\(user.objectId)"
         cell.userImageView.kf.setImage(with: URL(string: userImageUrl), placeholder: UIImage(named: "placeholderProfile"))
         cell.commentTextView.text = posts[indexPath.row].text
         
-        let imageUrl = posts[indexPath.row].imageUrl //****
-        cell.photoImageView.kf.setImage(with: URL(string: imageUrl))
+        //投稿写真
+        
+        
+        let postedImageUrl = posts[indexPath.row].imageUrl  //****ここのurlはとれないです!!
+        cell.photoImageView.kf.setImage(with: URL(string: postedImageUrl))
+        
 
         // Likeによってハートの表示を変える
         if posts[indexPath.row].isLiked == true {
             cell.likeButton.setImage(UIImage(named: "heart_red"), for: .normal)
         } else {
-            cell.likeButton.setImage(UIImage(named: "heart_white"), for: .normal)
+            cell.likeButton.setImage(UIImage(named: "heart_white"), for: .normal) 
         }
 
         // Likeの数
@@ -172,21 +174,21 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     func didTapCommentsButton(tableViewCell: UITableViewCell, button: UIButton) {
         // 選ばれた投稿を一時的に格納
-        selectedPost = posts[tableViewCell.tag]
+//        selectedPost = posts[tableViewCell.tag]
 
         // 遷移させる(このとき、prepareForSegue関数で値を渡す)
-        self.performSegue(withIdentifier: "toComments", sender: nil)
+//        self.performSegue(withIdentifier: "toComments", sender: nil)
     }
     
     
     func loadTimeline() {
         let query = NCMBQuery(className: "Post")
 
-        // 降順
-        query?.order(byDescending: "createDate")
-
         // 投稿したユーザーの情報も同時取得
         query?.includeKey("user")
+        
+        // 降順
+        query?.order(byDescending: "createDate")
 
         // フォロー中の人 + 自分の投稿だけ持ってくる
 //        query?.whereKey("user", containedIn: followings)
@@ -260,6 +262,7 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
 
     func loadFollowingUsers() {
+        
         // フォロー中の人だけ持ってくる
         let query = NCMBQuery(className: "Follow")
         query?.includeKey("user")

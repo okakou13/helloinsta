@@ -18,7 +18,6 @@ class TimelineTableViewCell: UITableViewCell {
     
     var delegate : TimelineTableViewCellDelegate?
     
-    
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
@@ -56,7 +55,6 @@ class TimelineTableViewCell: UITableViewCell {
     
     self.delegate?.didTapCommentsButton(tableViewCell: self, button: button)
     }
-    
     
     
     

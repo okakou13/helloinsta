@@ -140,7 +140,7 @@ class PostViewController: UIViewController ,UINavigationControllerDelegate, UIIm
                         } else {
                             SVProgressHUD.dismiss()
                             self.postImageView.image = nil
-                            self.postImageView.image = UIImage(named: "photo-placeholder")
+                            self.postImageView.image = UIImage(named: "placeholderProfile")
                             self.postTextView.text = nil
                             self.tabBarController?.selectedIndex = 0
                         }

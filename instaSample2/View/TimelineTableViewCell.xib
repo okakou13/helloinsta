@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="more"/>
                         <connections>
-                            <action selector="openMenu:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SeD-se-UKo"/>
+                            <action selector="openMenuWithButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vyy-HF-Jen"/>
                         </connections>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7H-o4-rDh">
@@ -45,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="heart_white"/>
                         <connections>
-                            <action selector="like:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="w6H-Jt-BXL"/>
+                            <action selector="likeWithButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XJJ-Il-Dcz"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="いいね" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mum-h8-O4T">
@@ -75,9 +75,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                         <state key="normal" title="コメントを表示"/>
-                        <connections>
-                            <action selector="showComments:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9kK-7n-See"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10時間前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzb-Qr-Je5">
                         <rect key="frame" x="9" y="572" width="43" height="12"/>
@@ -90,20 +87,23 @@
                         <rect key="frame" x="45" y="462" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="comment"/>
+                        <connections>
+                            <action selector="showCommentsWithButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cNK-Nw-Uqn"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentTextView" destination="wHH-CV-yYr" id="exa-mo-TRg"/>
-                <outlet property="likeButton" destination="LNJ-dh-pPC" id="b8B-8Q-OiQ"/>
+                <outlet property="likeButton" destination="LNJ-dh-pPC" id="vsA-hm-jHK"/>
                 <outlet property="likeCountLabel" destination="fYz-Uc-qmd" id="xSq-lL-5ju"/>
                 <outlet property="photoImageView" destination="e7H-o4-rDh" id="nUO-Qr-KQc"/>
                 <outlet property="timestampLabel" destination="xzb-Qr-Je5" id="IDh-mz-O8H"/>
                 <outlet property="userImageView" destination="WrX-6L-rcH" id="LCs-BH-foi"/>
                 <outlet property="userNameLabel" destination="Ce1-Oh-KSs" id="1JW-l0-22X"/>
             </connections>
-            <point key="canvasLocation" x="147.10144927536234" y="272.54464285714283"/>
+            <point key="canvasLocation" x="147.10144927536234" y="272.20982142857139"/>
         </tableViewCell>
     </objects>
     <resources>
